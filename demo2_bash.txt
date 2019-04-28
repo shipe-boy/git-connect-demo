@@ -1,0 +1,8 @@
+	$ clear	清除命令行
+	$ pwd	查看当前目录
+
+	首先我从git文件夹里打开了命令行
+	$ cd demo2
+	$ git init	（初始化仓库）
+	$ git status  (查看状态)
+	$ git add demo2_bash.txt
