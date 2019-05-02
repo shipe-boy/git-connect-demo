@@ -47,8 +47,3 @@
 	$ git status	(²é¿´)
 	$ git commit -m "delet demo2_bash"
 	$ git status	(OK)
-
-
-
-
-	
