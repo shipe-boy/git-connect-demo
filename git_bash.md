@@ -66,6 +66,49 @@
 	$ git status	(OK)
 ```
 
+## 连接远程仓库
+
+### 创建 SSH key
+
+1. 在github上创建账号，点击头像进入Settings界面
+2. 选择SSH and GPG keys，点击New SSH key来创建SSH key
+3. title 随意写（自己看的懂），key就要在本地生成了。（保持页面，回到本地生成SSH key）
+4. 在windows下查看`[c盘->用户->自己的用户名->.ssh]`下是否有`id_rsa`、`id_rsa.pub`文件，如果没有.ssh需要手动生成。 
+5. 在本地的cmd窗口(何处打开的都行) `$ ssh-keygen -t rsa -C ``"youremail@example.com"` 
+6. 进入`[c盘->用户->自己的用户名->.ssh]` 打开命令行 $ ll    查看文件，会发现有`id_rsa`、`id_rsa.pub`文件
+7. $ cat id_rsa.pub      (会弹出一长串东西,就是SSH key,将其复制到github上)
+8. SSH key  创建好之后，如何查看是否本地于github连通了呢
+   1. $ ssh -T git@github.com
+   2. 如果有让选择yes/no，选择yes
+   3. 第一次连接可能会有Warning，再次输入同样命令就好了
+
+### 添加远程仓库
+
+在github上创建好新仓库时，下面有详细的操作流程，可以直接按照上面的步骤操作。下面是我自己的总结：
+
+```
+主要涉及的命令：
+	$ git remote add origin 仓库地址
+	$ git push origin master
+	$ git push -u origin master
+```
+
+本地创建仓库，按照github上的操作流程进行操作：
+
+```
+$ ls -a		检查文件里是否已经有.git仓库了
+$ echo "# webpack-demo" >> README.md	新建README.md文件
+$ git init	初始化仓库
+$ ls -a		此时会多出README.md文件和.git文件
+$ git add README.md		添加到暂存区
+$ git commit -m 'first commit'	添加到本地仓库
+$ git remote add origin 远程仓库地址	将本地仓库与远程仓库关联
+$ git push -u origin master		(-u 默认把本地的master和远程的master关联上，只有第一次时用写-u,再次push时和克隆后push时不需要)
+
+```
+
+
+
 ## 克隆远程仓库
 
 首先看看文件里是否有git仓库
