@@ -193,5 +193,11 @@ $ git push origin v1.0.1	推送标签
 
 ## 五、分支管理
 
+主要涉及命令：
 
+```
+$ git branch 分支名	创建分支
+$ git branch		查看分支
+$ git checkout 分支名		切换分支
+```
 
