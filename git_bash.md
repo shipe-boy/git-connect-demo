@@ -54,7 +54,7 @@
 		Date:   Sun Apr 28 21:31:22 2019 +0800
 	
 			bash commit demo2
-	$ git reset --hard f4b958144840aa25e878a25c7901b42372c608cb	(git reset --hard commit号)
+	$ git reset --hard f4b958144840aa25e878a25c7901b42372c608cb	(git reset --hard commit号)（后面会介绍标签管理）
 		此时文件回到了没修改之前的
 
 把本地仓库清除干净：
@@ -189,4 +189,4 @@ $ git push origin v1.0.1	推送标签
 
 标签推送到github上后如何查看？
 
-![1556870604040](C:\Users\shipe\AppData\Local\Temp\1556870604040.png)
+​	在项目名旁边，点击 Branch:master 下拉框选择tag查看。
