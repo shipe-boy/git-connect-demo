@@ -1,5 +1,7 @@
 # 关于git命令行操作
 
+## 一、初步认识命令行的git命令
+
 	$ clear			清除命令行
 	$ pwd			查看当前目录
 	$ git init		初始化仓库
@@ -7,10 +9,9 @@
 	$ git commit -m "描述信息"		将文件提交
 	$ git status	查看状态
 
-## 来一个例子看看
+### 来一个例子看看
 
 下面是我进行一系列操作的步骤和总结：
-	
 
 ```
 首先我从git文件夹里打开了命令行
@@ -66,9 +67,9 @@
 	$ git status	(OK)
 ```
 
-## 连接远程仓库
+## 二、连接远程仓库
 
-### 创建 SSH key
+### 1、创建 SSH key
 
 1. 在github上创建账号，点击头像进入Settings界面
 2. 选择SSH and GPG keys，点击New SSH key来创建SSH key
@@ -82,7 +83,7 @@
    2. 如果有让选择yes/no，选择yes
    3. 第一次连接可能会有Warning，再次输入同样命令就好了
 
-### 添加远程仓库
+### 2、添加（连接）远程仓库
 
 在github上创建好新仓库时，下面有详细的操作流程，可以直接按照上面的步骤操作。下面是我自己的总结：
 
@@ -109,7 +110,7 @@ $ git push -u origin master		(-u 默认把本地的master和远程的master关�
 
 
 
-## 克隆远程仓库
+## 三、克隆远程仓库
 
 首先看看文件里是否有git仓库
 
@@ -131,5 +132,17 @@ $ git push -u origin master		(-u 默认把本地的master和远程的master关�
 	$ git push		提交到远程仓库
 	
 		
+```
+
+## 标签管理
+
+涉及命令行操作：
+
+```
+$ git tag	查看所有标签
+$ git tag 标签名		创建标签
+$ git tag -a 标签名 -m "描述信息"		指定提交信息
+$ git tag -d 标签名	删除标签
+$ git push origin 标签名	标签发布
 ```
 
