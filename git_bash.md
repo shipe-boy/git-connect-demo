@@ -201,3 +201,67 @@ $ git branch		查看分支
 $ git checkout 分支名		切换分支
 ```
 
+来操作下：
+
+```
+
+$ git branch
+	* master
+
+$ git branch feature	创建分支
+
+$ git branch	查看分支，当前在master分支上
+      feature
+    * master
+
+$ git checkout feature		切换到feature分支上
+	Switched to branch 'feature'
+
+$ git branch
+    * feature
+      master
+
+$ git status
+    On branch feature
+    nothing to commit, working tree clean
+
+$ echo "new branch" >> branch.txt		添加了文件和内容
+
+$ git add branch.txt
+    warning: LF will be replaced by CRLF in branch.txt.
+    The file will have its original line endings in your working directory
+
+$ git commit -m "new branch commit"
+    [feature 6c6a796] new branch commit
+     1 file changed, 1 insertion(+)
+     create mode 100644 branch.txt
+
+$ git status
+    On branch feature
+    nothing to commit, working tree clean
+
+$ git checkout master		回到master分支上
+    Switched to branch 'master'
+    Your branch is up to date with 'origin/master'.
+
+$ git branch
+      feature
+    * master
+
+$ git merge feature			将feater分支合并到master分支上（前提是当前你要在master分支上）
+    Updating ed9a19f..6c6a796
+    Fast-forward
+     branch.txt | 1 +
+     1 file changed, 1 insertion(+)
+     create mode 100644 branch.txt
+
+
+$ git branch -d feature		删除分支
+	Deleted branch feature (was 6c6a796).
+
+$ git branch
+	* master
+
+
+```
+
